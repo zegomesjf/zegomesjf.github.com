@@ -2,7 +2,7 @@ var map = null;
 
 function initialize() {
   var geocoder = new GClientGeocoder();
-  var address = "New York"
+  var address = "Palotina, PR"
   var map = new GMap2(document.getElementById("map_canvas"));
   geocoder.getLatLng(
     address,
