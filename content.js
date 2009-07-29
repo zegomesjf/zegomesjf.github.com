@@ -18,12 +18,11 @@ $(document).ready(function(){
                         map.setCenter(point, 13);
                         var marker = new GMarker(point);
                         map.addOverlay(marker);
-                        marker.openInfoWindowHtml(address);
+                        /*marker.openInfoWindowHtml(address);*/
                     }
                 }
-            );
-          
-            $('#map_canvas').show();
+            );      
+            $('#map_canvas').slideDown();
         }
     });
 });
