@@ -1,24 +1,442 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head> <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Ozeias! 🎉</title>
+  <meta name="description" content="A birthday microsite celebrating Ozeias Santana — Software Engineer, builder, and caring human.">
+  <meta property="og:title" content="Happy Birthday, Ozeias! 🎉">
+  <meta property="og:description" content="Celebrating Ozeias Santana — Software Engineer, builder, and caring human.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta name="theme-color" content="#5B8DEF">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --text: #e6ecff;
+      --muted: #a9b3d3;
+      --brand: #5B8DEF;
+      --brand-2: #7FE7C4;
+      --accent: #FFD166;
+      --danger: #ff5c7a;
+      --ok: #7bd88f;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8faff;
+        --panel: #ffffff;
+        --text: #0e1222;
+        --muted: #4b587a;
+        --shadow: 0 10px 30px rgba(18,26,51,.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 10% -20%, rgba(91,141,239,.20), transparent 45%),
+                  radial-gradient(900px 700px at 110% 10%, rgba(127,231,196,.20), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header.hero {
+      position: relative;
+      border-radius: var(--radius);
+      padding: 28px;
+      background:
+        linear-gradient(135deg, rgba(91,141,239,.18), rgba(127,231,196,.10)),
+        var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .badge {
+      display: inline-flex; gap: 8px; align-items: center;
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(91,141,239,.18);
+      color: var(--text); font-weight: 600; font-size: 14px;
+    }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-2); display:inline-block; }
+    .title {
+      margin: 14px 0 6px;
+      font-size: clamp(28px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: .2px;
+    }
+    .subtitle {
+      margin: 0 0 18px;
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--muted);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      border: 0; cursor: pointer; text-decoration: none;
+      background: var(--brand); color: white; padding: 12px 16px;
+      border-radius: 12px; font-weight: 700; box-shadow: var(--shadow);
+    }
+    .btn.secondary { background: transparent; color: var(--text); border: 2px solid rgba(255,255,255,.15); }
+    .btn.ghost { background: transparent; color: var(--muted); }
+    .grid {
+      display: grid; gap: 18px; margin-top: 22px;
+      grid-template-columns: repeat(12, minmax(0,1fr));
+    }
+    .card {
+      grid-column: span 12;
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    @media (min-width: 800px) {
+      .card.half { grid-column: span 6; }
+      .card.third { grid-column: span 4; }
+    }
+    .section-title {
+      margin: 0 0 10px; font-size: 22px; letter-spacing: .2px;
+    }
+    .kudos { display: grid; gap: 12px; }
+    .kudo {
+      display: grid; gap: 4px; padding: 14px; border-radius: 12px;
+      background: linear-gradient(180deg, rgba(127,231,196,.10), transparent);
+      border: 1px solid rgba(127,231,196,.25);
+    }
+    .kudo strong { font-size: 15px; }
+    .timeline { position: relative; padding-left: 18px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 6px; top: 4px; bottom: 4px; width: 2px;
+      background: linear-gradient(var(--brand), transparent 65%);
+      opacity: .65;
+    }
+    .tl-item { position: relative; margin: 12px 0 14px; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -2px; top: 6px; width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 0 4px rgba(255,209,102,.2);
+    }
+    .mono { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 6px 10px; border-radius: 999px;
+      background: rgba(91,141,239,.16); border: 1px solid rgba(91,141,239,.25);
+      font-size: 13px;
+    }
+    .projects { display: grid; gap: 14px; }
+    .project {
+      display: grid; gap: 8px; padding: 14px; border-radius: 12px;
+      background: linear-gradient(180deg, rgba(91,141,239,.10), transparent);
+      border: 1px solid rgba(91,141,239,.25);
+    }
+    .project h4 { margin: 0; }
+    .wish-wall { display: grid; gap: 12px; }
+    .wish-input { display: grid; gap: 10px; }
+    .wish-list { display: grid; gap: 10px; }
+    .wish {
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,255,255,.18);
+      border-radius: 12px; padding: 12px;
+    }
+    .footer {
+      margin: 28px auto 10px; text-align: center; color: var(--muted); font-size: 14px;
+    }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); white-space: nowrap; border: 0; }
+    /* Confetti canvas */
+    #confetti {
+      position: fixed; inset: 0; pointer-events: none; z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="hero" role="banner" aria-label="Birthday header">
+      <span class="badge" aria-label="Celebration badge"><span class="dot"></span> Happy Birthday</span>
+      <h1 class="title">Ozeias Santana</h1>
+      <p class="subtitle">Software Engineer • Builder • Teammate • Lifelong Learner</p>
+      <div class="actions">
+        <button class="btn" id="btnCelebrate" aria-label="Celebrate with confetti">🎉 Celebrate</button>
+        <a class="btn secondary" href="#wish-wall">✍️ Leave a wish</a>
+        <button class="btn ghost" id="btnToggle" aria-label="Toggle dark/light">🌓 Theme</button>
+        <a class="btn ghost" href="#about" aria-label="Skip to about">↓ Learn more</a>
+      </div>
 
- <title></title>
+      <!-- Quick edit data block: tweak these values as needed.
+           This makes it easy to customize without digging through the HTML.
+      -->
+      <script id="oz-data" type="application/json">
+      {
+        "fullName": "Ozeias Santana",
+        "role": "Software Engineer",
+        "tags": ["Backend", "Clean Code", "APIs", "Cloud", "Open Source", "Testing", "Team Player"],
+        "funFacts": [
+          "Believes great code reads like great writing.",
+          "Automation > repetition — if it runs twice, script it.",
+          "Coffee-driven but code-reviewed.",
+          "Keyboard shortcuts enthusiast."
+        ],
+        "timeline": [
+          {"year": "Today", "text": "Surrounded by friends, family, and good vibes — happy birthday!"},
+          {"year": "Recent", "text": "Shipped meaningful features and mentored teammates."},
+          {"year": "Earlier", "text": "Broke complex problems into elegant, maintainable systems."}
+        ],
+        "projects": [
+          {"name": "Service Mesh Starter", "desc": "A no‑nonsense template for resilient microservices.", "link": "#"},
+          {"name": "CI/CD Turbo", "desc": "Reusable pipelines to ship safely and often.", "link": "#"},
+          {"name": "Docs-as-Code Kit", "desc": "Keep knowledge close to code — always current.", "link": "#"}
+        ]
+      }
+      </script>
+    </header>
 
- </head>
+    <main aria-live="polite">
+      <section class="grid" id="about" aria-label="About and highlights">
+        <article class="card half" aria-labelledby="about-title">
+          <h2 class="section-title" id="about-title">About Ozeias</h2>
+          <p>
+            Ozeias is a thoughtful engineer who cares about craft, clarity, and impact. He ships, teaches, and keeps
+            teams calm when systems get loud. Here’s to another lap around the sun — and to building things that make
+            people’s days a little better.
+          </p>
+          <div class="chips" id="tag-list" aria-label="Skills and interests"></div>
+        </article>
 
- <body>
+        <article class="card half" aria-labelledby="kudos-title">
+          <h2 class="section-title" id="kudos-title">Kudos & Kind Words</h2>
+          <div class="kudos" id="kudos">
+            <div class="kudo">
+              <strong>“Reliable, pragmatic, and kind.”</strong>
+              <span class="mono">— from the team</span>
+            </div>
+            <div class="kudo">
+              <strong>“Turns ambiguity into a plan — and the plan into results.”</strong>
+              <span class="mono">— a grateful PM</span>
+            </div>
+            <div class="kudo">
+              <strong>“Code reviewer you actually look forward to.”</strong>
+              <span class="mono">— a fellow dev</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card third" aria-labelledby="facts-title">
+          <h2 class="section-title" id="facts-title">Fun Facts</h2>
+          <ul id="fact-list"></ul>
+        </article>
+
+        <article class="card third" aria-labelledby="timeline-title">
+          <h2 class="section-title" id="timeline-title">Milestones</h2>
+          <div class="timeline" id="tl"></div>
+        </article>
+
+        <article class="card third" aria-labelledby="highlights-title">
+          <h2 class="section-title" id="highlights-title">Highlights</h2>
+          <ul>
+            <li>Crafts maintainable systems with strong tests.</li>
+            <li>Mentors with empathy; documents with clarity.</li>
+            <li>Bias to ship — safely, iteratively, and often.</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="projects-title">
+          <h2 class="section-title" id="projects-title">Project Showcase</h2>
+          <div class="projects" id="projects"></div>
+          <p class="mono">Tip: Replace the links with his actual repos or articles.</p>
+        </article>
+
+        <article class="card" id="wish-wall" aria-labelledby="wish-title">
+          <h2 class="section-title" id="wish-title">Wish Wall</h2>
+          <div class="wish-wall">
+            <div class="wish-input">
+              <label for="wishText" class="visually-hidden">Write a birthday wish</label>
+              <textarea id="wishText" rows="3" placeholder="Write a birthday wish for Ozeias… (saved only in your browser)" aria-label="Write a birthday wish"></textarea>
+              <div class="actions">
+                <button class="btn" id="addWish">Add Wish</button>
+                <button class="btn secondary" id="clearWishes">Clear My Wishes</button>
+                <a class="btn ghost" href="mailto:?subject=Happy%20Birthday%2C%20Ozeias!&body=Just%20left%20a%20message%20on%20your%20birthday%20page.%20🎉" aria-label="Share via email">✉️ Share</a>
+              </div>
+            </div>
+            <div class="wish-list" id="wishList" aria-live="polite"></div>
+          </div>
+          <p class="mono">Your wishes are stored locally (private to your device).</p>
+        </article>
+      </section>
+    </main>
+
+    <p class="footer">Made with ❤️ & JavaScript. Host this file as <code>index.html</code> on GitHub Pages.</p>
+  </div>
+
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    // ---- Data bootstrapping ----
+    const dataEl = document.getElementById('oz-data');
+    const OZ = JSON.parse(dataEl.textContent);
 
-    ga('create', 'UA-84581571-1', 'auto');
-    ga('send', 'pageview');
+    // Populate tags, facts, timeline, projects
+    const tagList = document.getElementById('tag-list');
+    OZ.tags.forEach(t => {
+      const s = document.createElement('span');
+      s.className = 'chip';
+      s.textContent = t;
+      tagList.appendChild(s);
+    });
 
+    const facts = document.getElementById('fact-list');
+    OZ.funFacts.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f;
+      facts.appendChild(li);
+    });
+
+    const tl = document.getElementById('tl');
+    OZ.timeline.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'tl-item';
+      const h = document.createElement('strong');
+      h.textContent = item.year;
+      const p = document.createElement('div');
+      p.textContent = item.text;
+      div.appendChild(h); div.appendChild(p);
+      tl.appendChild(div);
+    });
+
+    const projects = document.getElementById('projects');
+    OZ.projects.forEach(p => {
+      const wrap = document.createElement('div');
+      wrap.className = 'project';
+      wrap.innerHTML = \`
+        <h4>\${p.name}</h4>
+        <p>\${p.desc}</p>
+        <p><a href="\${p.link}" rel="noopener">View project →</a></p>
+      \`;
+      projects.appendChild(wrap);
+    });
+
+    // ---- Theme toggle ----
+    const btnToggle = document.getElementById('btnToggle');
+    const THEME_KEY = 'oz-theme';
+    const applyTheme = (t) => {
+      if (t === 'light') document.documentElement.style.colorScheme = 'light';
+      else document.documentElement.style.colorScheme = 'dark';
+      localStorage.setItem(THEME_KEY, t);
+    };
+    (() => {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved) applyTheme(saved);
+    })();
+    btnToggle.addEventListener('click', () => {
+      const current = localStorage.getItem(THEME_KEY) || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // ---- Wish wall (localStorage-only) ----
+    const WISH_KEY = 'oz-wishes';
+    const wishText = document.getElementById('wishText');
+    const wishList = document.getElementById('wishList');
+    const addWishBtn = document.getElementById('addWish');
+    const clearBtn = document.getElementById('clearWishes');
+
+    function renderWishes() {
+      wishList.innerHTML = '';
+      const wishes = JSON.parse(localStorage.getItem(WISH_KEY) || '[]');
+      wishes.forEach((w, idx) => {
+        const d = document.createElement('div');
+        d.className = 'wish';
+        d.innerHTML = \`
+          <div>\${w.text}</div>
+          <div class="mono">— \${w.when}</div>
+        \`;
+        wishList.appendChild(d);
+      });
+    }
+    function addWish() {
+      const t = wishText.value.trim();
+      if (!t) return;
+      const wishes = JSON.parse(localStorage.getItem(WISH_KEY) || '[]');
+      wishes.unshift({ text: t, when: new Date().toLocaleString() });
+      localStorage.setItem(WISH_KEY, JSON.stringify(wishes));
+      wishText.value = '';
+      renderWishes();
+      burst(); // confetti on add
+    }
+    function clearWishes() {
+      if (confirm('Clear only your locally saved wishes? This cannot be undone.')) {
+        localStorage.removeItem(WISH_KEY);
+        renderWishes();
+      }
+    }
+    addWishBtn.addEventListener('click', addWish);
+    clearBtn.addEventListener('click', clearWishes);
+    renderWishes();
+
+    // ---- Confetti (lightweight) ----
+    const c = document.getElementById('confetti');
+    const ctx = c.getContext('2d');
+    let W, H, confetti, rafId;
+    function resize() {
+      W = c.width = window.innerWidth;
+      H = c.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function makeConfetti(count=120) {
+      const colors = ['#5B8DEF', '#7FE7C4', '#FFD166', '#ff5c7a', '#7bd88f'];
+      return [...Array(count)].map(() => ({
+        x: Math.random() * W,
+        y: -10 - Math.random() * H,
+        r: 4 + Math.random() * 6,
+        s: 2 + Math.random() * 3,
+        w: 6 + Math.random() * 10,
+        h: 8 + Math.random() * 16,
+        a: Math.random() * Math.PI,
+        v: Math.random() * 0.03 + 0.01,
+        c: colors[(Math.random() * colors.length) | 0]
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0,0,W,H);
+      confetti.forEach(p => {
+        p.y += p.s;
+        p.x += Math.sin(p.a) * 0.8;
+        p.a += p.v;
+        // rotate rectangle
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.a);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      });
+      confetti = confetti.filter(p => p.y < H + 20);
+      if (confetti.length > 0) rafId = requestAnimationFrame(draw);
+    }
+    function burst() {
+      cancelAnimationFrame(rafId);
+      confetti = makeConfetti(160);
+      draw();
+      // fade out after a bit
+      setTimeout(() => confetti = [], 2500);
+    }
+    document.getElementById('btnCelebrate').addEventListener('click', burst);
+    // Auto-celebrate on first load
+    setTimeout(burst, 600);
+
+    // ---- Accessibility niceties ----
+    // Reduce motion users: skip confetti animation
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) {
+      burst = () => {}; // no-op
+    }
   </script>
-  <script src="https://static.getchute.com/display-runners/component-display-squares/component-display-squares.js" data-chute-component-display-squares="http://s3.amazonaws.com/store.getchute.com/57dcf8cbc194573953000001"></script><img src="https://pixel.getchute.com/?dID=57dcf8cbc194573953000001&cID=3257&eTp=view_served" style="width:0; height: 0">
-
- </body>
-
- </html>
+</body>
+</html>
